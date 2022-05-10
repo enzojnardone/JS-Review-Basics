@@ -2,7 +2,8 @@ console.log('JS Review Basics')
 
 // **Iteración #1: Mix for e includes**
 
-// Dado el siguiente javascript usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías. Ten en cuenta que las categorías no deberían repetirse. Para filtrar las categorías puedes ayudarte de la función **.includes()**
+// Dado el siguiente javascript usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías. 
+// Ten en cuenta que las categorías no deberían repetirse. Para filtrar las categorías puedes ayudarte de la función **.includes()**
 
 const movies = [
     {title: 'Madaraspar', duration: 192, categories: ['comedia', 'aventura']},
@@ -78,7 +79,34 @@ console.log(media);
 
 // **Iteración #3: Mix Fors**
 
-// Dado el siguiente javascript usa forof y forin para saber cuantas veces ha sido cada sonido agregado por los usuarios a favorito. Para ello recorre la lista de usuarios y usa forin para recoger el nombre de los sonidos que el usuario tenga como favoritos.
+// Dado el siguiente javascript usa forof y forin para saber cuantas veces ha sido cada sonido agregado por los usuarios a favorito. 
+// Para ello recorre la lista de usuarios y usa forin para recoger el nombre de los sonidos que el usuario tenga como favoritos.
 // Una vez accedas a ellos piensa en la mejor forma de hacer un conteo de cada vez que ese sonido se repita como favorito en cada usuario.
 
 // Este ejercicio es un poco complicado con los conocimientos actuales pero...a la vez un buen reto y oportunidad para comprender que hay muchas formas de hacer las cosas en javascript.
+
+// **Iteración #4: Métodos findArrayIndex**
+
+// Crea una función llamada `findArrayIndex` que reciba como parametros un array de textos y un texto y 
+// devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro. 
+// Haz varios ejemplos y compruebalos.
+
+// Sugerencia de función:
+
+let continents = ['America', 'Asia', 'Europa', 'Africa', 'Oceania'];
+
+function findArrayIndex(continent, text) {
+    let position = 0;
+        if (continents.includes(text)) {
+            return `Posicion ${continent.indexOf(text)}`
+        };
+};
+
+console.log(findArrayIndex(continents, 'Europa'));
+
+// **Iteración #5: Función rollDice**
+
+// Crea una función llamada **rollDice()** que reciba como parametro el numero de caras que queramos que tenga el dado
+//  que deberá silumar el codigo dentro de la función. Como hemos dicho, 
+//  que la función use el parametro para simular una tirada de dado y retornar el resultado. 
+// Si no se te ocurre como hacer un numero aleatorio no te preocupes! busca información sobre la función de javascript **Math.random();**
