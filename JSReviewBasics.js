@@ -116,3 +116,20 @@ function rollDice(min) {
 };
 
 console.log(rollDice(6));
+
+// **Iteración #6: Función swap**
+
+// Crea una función llamada `swap()` que reciba un array y dos parametros que sean indices del array. 
+// La función deberá intercambiar la posición de los valores de los indices que hayamos enviado como parametro. Retorna el array resultante.
+
+// Sugerencia de array:
+
+let randomArray = ['Mesirve', 'Cristiano Romualdo', 'Fernando Muralla', 'Ronalguiño']
+
+function swap(randomArray, x, y){
+    [randomArray[x], randomArray[y]] = [randomArray[y], randomArray[x]];
+    
+    return randomArray;
+};
+
+console.log(swap(randomArray, 0, 1));
