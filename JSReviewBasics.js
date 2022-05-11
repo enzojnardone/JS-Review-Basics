@@ -96,7 +96,7 @@ console.log(media);
 let continents = ['America', 'Asia', 'Europa', 'Africa', 'Oceania'];
 
 function findArrayIndex(continent, text) {
-    let position = 0;
+    let position = '';
         if (continents.includes(text)) {
             return `Posicion ${continent.indexOf(text)}`
         };
@@ -110,3 +110,9 @@ console.log(findArrayIndex(continents, 'Europa'));
 //  que deberá silumar el codigo dentro de la función. Como hemos dicho, 
 //  que la función use el parametro para simular una tirada de dado y retornar el resultado. 
 // Si no se te ocurre como hacer un numero aleatorio no te preocupes! busca información sobre la función de javascript **Math.random();**
+
+function rollDice(min) {
+    return Math.floor(Math.random() * (min-1 + 1)) + 1;
+};
+
+console.log(rollDice(6));
