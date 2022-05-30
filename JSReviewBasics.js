@@ -1,26 +1,26 @@
-console.log('JS Review Basics')
+console.log("JS Review Basics");
 
 // **Iteración #1: Mix for e includes**
 
-// Dado el siguiente javascript usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías. 
+// Dado el siguiente javascript usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías.
 // Ten en cuenta que las categorías no deberían repetirse. Para filtrar las categorías puedes ayudarte de la función **.includes()**
 
 const movies = [
-    {title: 'Madaraspar', duration: 192, categories: ['comedia', 'aventura']},
-    {title: 'Spiderpan', duration: 122, categories: ['aventura', 'acción']},
-    {title: 'Solo en Whatsapp', duration: 223, categories: ['comedia', 'thriller']},
-    {title: 'El gato con guantes', duration: 111, categories: ['comedia', 'aventura', 'animación']},
-]
+  { title: "Madaraspar", duration: 192, categories: ["comedia", "aventura"] },
+  { title: "Spiderpan", duration: 122, categories: ["aventura", "acción"] },
+  {title: "Solo en Whatsapp", duration: 223, categories: ["comedia", "thriller"],},
+  {title: "El gato con guantes", duration: 111, categories: ["comedia", "aventura", "animación"],},
+];
 
 const categories = [];
 
 for (const movie of movies) {
-    movie.categories.forEach(item => {
-        if(!categories.includes(item)){
-            categories.push(item);
-        };
-    });
-};
+  movie.categories.forEach((item) => {
+    if (!categories.includes(item)) {
+      categories.push(item);
+    }
+  });
+}
 
 console.log(categories);
 
@@ -29,107 +29,160 @@ console.log(categories);
 // Dado el siguiente javascript usa forof y forin para hacer la media del volumen de todos los sonidos favoritos que tienen los usuarios.
 
 const users = [
-    {name: 'Manolo el del bombo',
-        favoritesSounds: {
-            waves: {format: 'mp3', volume: 50},
-            rain: {format: 'ogg', volume: 60},
-            firecamp: {format: 'mp3', volume: 80},
-        }
+  {
+    name: "Manolo el del bombo",
+    favoritesSounds: {
+      waves: { format: "mp3", volume: 50 },
+      rain: { format: "ogg", volume: 60 },
+      firecamp: { format: "mp3", volume: 80 },
     },
-    {name: 'Mortadelo',
-        favoritesSounds: {
-            waves: {format: 'mp3', volume: 30},
-            shower: {format: 'ogg', volume: 55},
-            train: {format: 'mp3', volume: 60},
-        }
+  },
+  {
+    name: "Mortadelo",
+    favoritesSounds: {
+      waves: { format: "mp3", volume: 30 },
+      shower: { format: "ogg", volume: 55 },
+      train: { format: "mp3", volume: 60 },
     },
-    {name: 'Super Lopez',
-        favoritesSounds: {
-            shower: {format: 'mp3', volume: 50},
-            train: {format: 'ogg', volume: 60},
-            firecamp: {format: 'mp3', volume: 80},
-        }
+  },
+  {
+    name: "Super Lopez",
+    favoritesSounds: {
+      shower: { format: "mp3", volume: 50 },
+      train: { format: "ogg", volume: 60 },
+      firecamp: { format: "mp3", volume: 80 },
     },
-    {name: 'El culebra',
-        favoritesSounds: {
-            waves: {format: 'mp3', volume: 67},
-            wind: {format: 'ogg', volume: 35},
-            firecamp: {format: 'mp3', volume: 60},
-        }
+  },
+  {
+    name: "El culebra",
+    favoritesSounds: {
+      waves: { format: "mp3", volume: 67 },
+      wind: { format: "ogg", volume: 35 },
+      firecamp: { format: "mp3", volume: 60 },
     },
-]
+  },
+];
 
 let volume = [];
 
 for (const user of users) {
-    for (const key in user.favoritesSounds) {
-        volume.push(user.favoritesSounds[key].volume);
-    };
-};
+  for (const key in user.favoritesSounds) {
+    volume.push(user.favoritesSounds[key].volume);
+  }
+}
 
 console.log(volume);
 
 let i = 0;
 for (const vol of volume) {
-    i += vol;
-};
+  i += vol;
+}
 let media = i / volume.length;
 
 console.log(media);
 
 // **Iteración #3: Mix Fors**
 
-// Dado el siguiente javascript usa forof y forin para saber cuantas veces ha sido cada sonido agregado por los usuarios a favorito. 
+// Dado el siguiente javascript usa forof y forin para saber cuantas veces ha sido cada sonido agregado por los usuarios a favorito.
 // Para ello recorre la lista de usuarios y usa forin para recoger el nombre de los sonidos que el usuario tenga como favoritos.
 // Una vez accedas a ellos piensa en la mejor forma de hacer un conteo de cada vez que ese sonido se repita como favorito en cada usuario.
 
-// Este ejercicio es un poco complicado con los conocimientos actuales pero...a la vez un buen reto y oportunidad para comprender que hay muchas formas de hacer las cosas en javascript.
+// Este ejercicio es un poco complicado con los conocimientos actuales pero...
+// a la vez un buen reto y oportunidad para comprender que hay muchas formas de hacer las cosas en javascript.
+
+const users2 = [
+  {name: 'Manolo el del bombo',
+      favoritesSounds: {
+          waves: {format: 'mp3', volume: 50},
+          rain: {format: 'ogg', volume: 60},
+          firecamp: {format: 'mp3', volume: 80},
+      }
+  },
+  {name: 'Mortadelo',
+      favoritesSounds: {
+          waves: {format: 'mp3', volume: 30},
+          shower: {format: 'ogg', volume: 55},
+          train: {format: 'mp3', volume: 60},
+      }
+  },
+  {name: 'Super Lopez',
+      favoritesSounds: {
+          shower: {format: 'mp3', volume: 50},
+          train: {format: 'ogg', volume: 60},
+          firecamp: {format: 'mp3', volume: 80},
+      }
+  },
+  {name: 'El culebra',
+      favoritesSounds: {
+          waves: {format: 'mp3', volume: 67},
+          wind: {format: 'ogg', volume: 35},
+          firecamp: {format: 'mp3', volume: 60},
+      }
+  },
+];
+
+const count = {};
+for (let i of users){
+  for(let j in i.favoritesSounds){
+      if(count[j]){
+          count[j]++;
+      }else{
+          count[j] = 1;
+      }
+  }
+}
+
+console.log(count);
 
 // **Iteración #4: Métodos findArrayIndex**
 
-// Crea una función llamada `findArrayIndex` que reciba como parametros un array de textos y un texto y 
-// devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro. 
+// Crea una función llamada `findArrayIndex` que reciba como parametros un array de textos y un texto y
+// devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro.
 // Haz varios ejemplos y compruebalos.
 
 // Sugerencia de función:
 
-let continents = ['America', 'Asia', 'Europa', 'Africa', 'Oceania'];
+let continents = ["America", "Asia", "Europa", "Africa", "Oceania"];
 
 function findArrayIndex(continent, text) {
-    let position = '';
-        if (continents.includes(text)) {
-            return `Posicion ${continent.indexOf(text)}`
-        };
-};
+  if (continents.includes(text)) {
+    return `Posicion ${continent.indexOf(text)}`;
+  }
+}
 
-console.log(findArrayIndex(continents, 'Europa'));
+console.log(findArrayIndex(continents, "Africa"));
 
 // **Iteración #5: Función rollDice**
 
 // Crea una función llamada **rollDice()** que reciba como parametro el numero de caras que queramos que tenga el dado
-//  que deberá silumar el codigo dentro de la función. Como hemos dicho, 
-//  que la función use el parametro para simular una tirada de dado y retornar el resultado. 
+//  que deberá silumar el codigo dentro de la función. Como hemos dicho,
+//  que la función use el parametro para simular una tirada de dado y retornar el resultado.
 // Si no se te ocurre como hacer un numero aleatorio no te preocupes! busca información sobre la función de javascript **Math.random();**
 
-function rollDice(min) {
-    return Math.floor(Math.random() * (min-1 + 1)) + 1;
-};
+function rollDice(dice) {
+  return Math.floor(Math.random() * (dice - 1 + 1)) + 1;
+}
 
 console.log(rollDice(6));
 
 // **Iteración #6: Función swap**
 
-// Crea una función llamada `swap()` que reciba un array y dos parametros que sean indices del array. 
+// Crea una función llamada `swap()` que reciba un array y dos parametros que sean indices del array.
 // La función deberá intercambiar la posición de los valores de los indices que hayamos enviado como parametro. Retorna el array resultante.
 
 // Sugerencia de array:
 
-let randomArray = ['Mesirve', 'Cristiano Romualdo', 'Fernando Muralla', 'Ronalguiño']
+let randomArray = [
+  "Mesirve",
+  "Cristiano Romualdo",
+  "Fernando Muralla",
+  "Ronalguiño",
+];
 
-function swap(randomArray, x, y){
-    [randomArray[x], randomArray[y]] = [randomArray[y], randomArray[x]];
-    
-    return randomArray;
-};
+function swap(element, x, y) {
+  [element[x], element[y]] = [element[y], element[x]];
 
-console.log(swap(randomArray, 0, 1));
+  return element;
+}
+
+console.log(swap(continents, 0, 1));
